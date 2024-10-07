@@ -1,20 +1,34 @@
-## CRUD
+# Pertemuan Keempat
 
-- Create: Membuat atau menambah data baru
-- Read: Membaca data yang sudah ada
-- Update: Mengubah data yang sudah ada
-- Delete: Menghapus data yang sudah ada
+## Daftar Isi
+- [CRUD](#crud)
+  - [Create](#create)
+  - [Read](#read)
+  - [Update](#update)
+  - [Delete](#delete)
+- [Exception Handling](#exception-handling)
+  - [Try Catch](#try-catch)
+  - [Throws](#throws)
+
+---
+
+## CRUD
+CRUD adalah singkatan dari empat operasi dasar dalam manajemen data, yaitu:
+- **Create**: Membuat atau menambah data baru.
+- **Read**: Membaca data yang sudah ada.
+- **Update**: Mengubah data yang sudah ada.
+- **Delete**: Menghapus data yang sudah ada.
+
+---
 
 ## Exception Handling
-proses merespons terjadinya pengecualian yang memerlukan pemrosesan khusus selama eksekusi program.
+Exception handling adalah proses merespons terjadinya pengecualian yang memerlukan pemrosesan khusus selama eksekusi program. 
 
-- Try Catch
+### Try Catch
+Try-catch digunakan untuk menangani error yang terjadi dalam blok kode tertentu. Jika terjadi error di dalam blok `try`, kontrol akan langsung dialihkan ke blok `catch` untuk menangani error tersebut.
 
-Try-catch digunakan untuk menangani error yang terjadi dalam blok kode tertentu. Jika terjadi error
-di dalam blok try, kontrol akan langsung dialihkan ke blok catch untuk menangani error tersebut.
-
-Code Try Catch:
-<pre><code>
+**Contoh Kode Try Catch:**
+```java
 public class TryCatch {
     public void aksesArrayDenganTryCatch() {
         int[] angka = {1, 2, 3, 4};
@@ -30,20 +44,20 @@ public class TryCatch {
         contoh.aksesArrayDenganTryCatch();
     }
 }
-```</pre>
 
-- Throws
-
-Dengan menggunakan throws, exception yang muncul pada
+```
+### Throws
+Throws merupakan salah satu cara untuk meng-handle kemunculan exception selain
+menggunakan try-catch. Dengan menggunakan throws, exception yang muncul pada
 suatu blok kode dalam suatu method akan dilemparkan lagi menuju kode yang
 memanggil method tersebut. Dengan demikian, biarkan yang menggunakan method
 tersebut yang melakukan handle lebih lanjut dari exception yang telah muncul.
 
-Code Throws:
-<pre><code>
+**Contoh Kode Throws:**
+```java
 public class Throws {
     
-    public int aksesArray(int[] arr, int indeks) {
+    public int aksesArray(int[] arr, int indeks) throws ArrayIndexOutOfBoundsException {
         if (indeks < 0 || indeks >= arr.length) {
             throw new ArrayIndexOutOfBoundsException("Indeks di luar batas: " + indeks);
         }
@@ -62,4 +76,5 @@ public class Throws {
         }
     }
 }
-```</pre>
+
+
